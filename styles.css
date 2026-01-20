@@ -465,7 +465,60 @@ a {
     color: #555;
 }
 
-/* Story Gallery Section (Redesigned) */
+/* Location Section */
+.location-section {
+    background-color: transparent;
+    /* Clean background */
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(197, 179, 88, 0.2);
+}
+
+.simple-location-wrapper {
+    text-align: center;
+    max-width: 600px;
+    margin: 2rem auto 0;
+}
+
+.venue-image-simple {
+    width: 250px;
+    /* Increased size slightly for better visibility */
+    height: auto;
+    margin: 0 auto 2rem;
+    /* No border, no padding */
+}
+
+.venue-img-simple {
+    width: 100%;
+    display: block;
+    border-radius: 50%;
+    /* Keeping it round as requested */
+    /* No border color */
+}
+
+/* Reusing existing text styles but ensuring they work in this context */
+.simple-location-wrapper h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.simple-location-wrapper .venue-type {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.simple-location-wrapper .address {
+    color: #666;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+/* Story Gallery Section (Redesigned - Grid) */
 .gallery-section {
     padding-bottom: 8rem;
     background-color: transparent;
@@ -473,79 +526,82 @@ a {
 }
 
 .story-timeline {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4rem;
-    /* Space between cards */
-    max-width: 600px;
-    /* Constrain width for elegance */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
+    align-items: start;
 }
 
 .story-card {
     background-color: #fff;
-    padding: 1.5rem 1.5rem 2rem 1.5rem;
-    /* Polaroid padding */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transform: rotate(-1deg);
-    /* Slight organic tilt default */
+    padding: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transform: none !important;
+    /* Reset rotation */
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     width: 100%;
     position: relative;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
 }
 
-/* Alternate slight rotations for organic feel */
+/* Reset nth-child rotation */
 .story-card:nth-child(even) {
-    transform: rotate(1deg);
+    transform: none;
 }
 
 .story-card:hover {
-    transform: scale(1.02) rotate(0deg);
-    box-shadow: 0 15px 40px rgba(197, 179, 88, 0.2);
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(197, 179, 88, 0.15);
     z-index: 5;
 }
 
 .story-img-wrapper {
     overflow: hidden;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    /* Inner photo border */
+    margin-bottom: 1rem;
+    border: none;
+    width: 100%;
 }
 
 .gallery-img {
     width: 100%;
-    height: 350px;
-    /* Reduced height as requested */
-    object-fit: cover;
+    height: auto;
+    /* Allow full height */
+    max-height: 500px;
+    /* Optional cap to prevent super tall images from breaking layout too much */
+    object-fit: contain;
+    /* Ensure full image is visible */
     display: block;
     transition: transform 0.8s ease;
     filter: sepia(10%) contrast(95%);
+    border-radius: 2px;
 }
 
 .story-card:hover .gallery-img {
-    transform: scale(1.05);
+    transform: scale(1.02);
     filter: sepia(0%) contrast(100%);
 }
 
 .story-details {
     text-align: center;
+    padding-top: 1rem;
 }
 
 .story-date {
     display: block;
     font-family: var(--font-heading);
     color: var(--accent-color);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
     letter-spacing: 1px;
 }
 
 .story-desc {
     font-family: var(--font-body);
-    font-size: 0.95rem;
-    /* Small description */
+    font-size: 0.9rem;
     color: #666;
     font-weight: 300;
     font-style: italic;
@@ -689,14 +745,27 @@ footer {
         margin-bottom: 3rem;
     }
 
-    .timeline-item:nth-child(odd) .timeline-icon,
-    .timeline-item:nth-child(even) .timeline-icon {
-        left: 5px;
-        right: auto;
+    /* Location Responsive - No specific grid needed for simple layout, 
+       but we ensure the image doesn't get too big on small screens */
+    .venue-image-simple {
+        width: 180px;
     }
 
-    .gallery-grid {
+    /* Gallery Responsive */
+    .story-timeline {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .story-timeline {
         grid-template-columns: 1fr;
-        padding: 0;
+        /* 1 column on mobile */
+    }
+
+    /* Adjust image height for simple location again if needed */
+    .venue-image-simple {
+        width: 180px;
     }
 }
