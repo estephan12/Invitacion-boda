@@ -105,14 +105,15 @@ a {
     max-width: 1100px;
     margin-inline: auto;
     box-sizing: border-box;
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
+    /* Reduced from 6rem 2rem */
     position: relative;
     z-index: 10;
 }
 
 .section {
-    padding: 3rem 0;
-    /* Reduced as requested */
+    padding: 1.5rem 0;
+    /* Reduced from 3rem 0 */
     text-align: center;
     position: relative;
     background: transparent;
@@ -125,7 +126,8 @@ a {
     /* More opaque background for text blocks */
     backdrop-filter: blur(3px);
     /* As requested */
-    margin: 2rem 0;
+    margin: 1.5rem 0;
+    /* Reduced from 2rem 0 */
     border-top: 1px solid rgba(197, 179, 88, 0.2);
     /* Subtle gold separators */
     border-bottom: 1px solid rgba(197, 179, 88, 0.2);
@@ -134,7 +136,8 @@ a {
 /* Section Title Styling */
 .section-title {
     font-size: 2.2rem;
-    margin-bottom: 4rem;
+    margin-bottom: 2.5rem;
+    /* Reduced from 4rem */
     color: var(--text-color);
     position: relative;
     display: inline-block;
@@ -332,6 +335,25 @@ a {
     margin-top: 5px;
 }
 
+/* Prayer Section */
+.prayer-section {
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 1.5rem 0;
+    /* Reduced from 2rem */
+    border-top: 1px solid rgba(197, 179, 88, 0.1);
+    border-bottom: 1px solid rgba(197, 179, 88, 0.1);
+}
+
+.prayer-message {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #555;
+    line-height: 1.8;
+}
+
 /* Itinerary Section */
 .timeline {
     position: relative;
@@ -353,7 +375,8 @@ a {
 
 .timeline-item {
     position: relative;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+    /* Reduced from 5rem */
     width: 50%;
 }
 
