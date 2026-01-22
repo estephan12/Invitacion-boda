@@ -774,3 +774,62 @@ footer {
         width: 180px;
     }
 }
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+
+.whatsapp-float i {
+    margin-top: 2px;
+    /* Visual adjustment for the icon */
+}
+
+/* Bible Verse Section */
+.verse-section {
+    background-color: rgba(255, 255, 255, 0.4);
+    margin: 1.5rem 0;
+    border-top: 1px solid rgba(197, 179, 88, 0.1);
+    border-bottom: 1px solid rgba(197, 179, 88, 0.1);
+    padding: 3rem 1rem;
+}
+
+.verse-text {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--font-heading);
+}
+
+.verse-ref {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    margin-top: 1rem;
+    font-weight: 700;
+}
