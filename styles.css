@@ -608,6 +608,17 @@ a {
     filter: sepia(0%) contrast(100%);
 }
 
+.photo-quote {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 300;
+    font-family: var(--font-heading);
+    line-height: 1.4;
+}
+
 /* Footer */
 footer {
     background-color: transparent;
